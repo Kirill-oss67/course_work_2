@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Все посты найденные по запросу "{{for_search}}"</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+<main>
+
+    <a href="/" class="link">Назад</a>
+
+    <h2>Посты по запросу : "{{for_search}}"</h2>
+    <p class="search__results">Найдено постов: {{count}}</p>
+    {%for i in searched_list %}
+    <hr>
+<section class="items">
+      <div class="items__item item">
+        <div class="item__top">
+          <a href="/posts/{{i['poster_name']}}" class="item__head">
+            <div class="item__ava-wrap">
+              <img src="{{i['poster_avatar']}}" alt="" class="item__ava" width="53">
+            </div>
+            <span class="item__username">{{i["poster_name"]}}</span>
+          </a>
+        </div>
+        <a href="/posts/{{i['pk']}}" class="item__post-link">
+          <img src="{{i['pic']}}" alt="" width="348" class="item__post-img">
+        </a>
+        <p class="item__descr"><a href="/tag.html" class="item__tag">#food</a> {{i['content'][:50]}}...</p>
+        <div class="item__post-info">
+          <div class="item__counter">
+            <img src="../static/img/eye.png" alt="" class="item__counter-icon" width="26">
+            <span class="item__counter-text">212</span>
+          </div>
+        </div>
+        <div class="item__post-bottom">
+          <a href="/posts/{{i['pk']}}" class="item__btn-more">Подробнее</a>
+          <button type="button" class="item__bookmark-btn">
+            <img src="../static/img/bookmark.png" alt="" class="item__bookmark-icon" width="24">
+          </button>
+        </div>
+      </div>
+    </section>
+    {% endfor %}
+
+
+</main>
+</body>
+</html>
