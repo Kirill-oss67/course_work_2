@@ -23,10 +23,5 @@ def api_2(post_id):
     return jsonify(post)
 
 
-# response = app.test_client().get('/GET/api/posts/<int:post_id>')
-#
-# assert response.json.get("poster_name")
-
-
 if __name__ == "__main__":
     app.run(debug=True, port=5100)

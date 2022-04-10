@@ -22,7 +22,6 @@ def get_posts_by_user(user_name):
 
 def get_comments_by_post_id(pk):
     list_comments = []
-    post = get_post_by_pk(pk)
     with open(path_comments, 'r', encoding='UTF-8') as f:
         all_comments = json.load(f)
     for comments in all_comments:

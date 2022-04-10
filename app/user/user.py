@@ -8,5 +8,4 @@ user_blueprint = Blueprint('user_blueprint', __name__, template_folder="template
 def users(username):
     users_posts = get_posts_by_user(username)
     user_name = users_posts[0]["poster_name"]
-    return render_template('user-feed.html',users_posts=users_posts,user_name=user_name)
-
+    return render_template('user-feed.html', users_posts=users_posts, user_name=user_name)
