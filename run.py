@@ -11,13 +11,13 @@ app.register_blueprint(search_blueprint)
 app.register_blueprint(user_blueprint)
 
 
-@app.route("/GET/api/posts")
+@app.route("/api/posts")
 def api_1():
     data = get_posts_all()
     return jsonify(data)
 
 
-@app.route("/GET/api/posts/<int:post_id>")
+@app.route("/api/posts/<int:post_id>")
 def api_2(post_id):
     post = get_post_by_pk(post_id)
     return jsonify(post)

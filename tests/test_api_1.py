@@ -4,11 +4,11 @@ from utils import get_posts_all
 
 
 def test_posts():
-    response = app.test_client().get('/GET/api/posts')
+    response = app.test_client().get('/api/posts')
     assert type(response.json) == list
 
 def test_keys():
-    response = app.test_client().get('/GET/api/posts')
+    response = app.test_client().get('/api/posts')
     list_keys = ["poster_name", "poster_avatar", "pic", "content", "views_count", "likes_count", "pk"]
     test_data = response.json
     test_post = test_data[0]
