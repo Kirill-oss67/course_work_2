@@ -3,12 +3,14 @@ from utils import get_posts_all, get_post_by_pk
 from app.index.views import index_blueprint
 from app.search.search import search_blueprint
 from app.user.user import user_blueprint
+from app.tag.tag import tag_blueprint
 
 app = Flask(__name__)
 
 app.register_blueprint(index_blueprint)
 app.register_blueprint(search_blueprint)
 app.register_blueprint(user_blueprint)
+app.register_blueprint(tag_blueprint)
 
 
 @app.route("/api/posts")

@@ -39,7 +39,7 @@
         <a href="/posts/{{i['pk']}}" class="item__post-link">
           <img src="{{i['pic']}}" alt="" width="348" class="item__post-img">
         </a>
-        <p class="item__descr"><a href="#" class="item__tag">#food</a> {{i['content'][:50]}}...</p>
+        <p class="item__descr"><a href="/tag?s={{i['tag']}}" class="item__tag">#{{i['tag']}}</a> {{i['content'][:50]}}...</p>
         <div class="item__post-info">
           <div class="item__counter">
             <img src="../static/img/eye.png" alt="" class="item__counter-icon" width="26">

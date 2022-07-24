@@ -45,3 +45,11 @@ def get_post_by_pk(pk):
         if i['pk'] == pk:
             post = i
             return post
+
+def search_by_teg(tag_word):
+    data = get_posts_all()
+    searched_posts = []
+    for i in data:
+        if tag_word.lower() in i['tag'].lower():
+            searched_posts.append(i)
+    return searched_posts
