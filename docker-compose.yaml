@@ -1,0 +1,9 @@
+version: '3.9'
+services:
+  flask_web:
+    build:
+      context: .
+    ports:
+      - 800:80
+
+
