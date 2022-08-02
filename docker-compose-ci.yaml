@@ -3,9 +3,8 @@ services:
   flask_web:
     build:
       context: .
-    image: yakovkirilldeveloper/hw26
     ports:
       - 80:80
     restart: always
-
+  
 
