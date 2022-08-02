@@ -11,7 +11,7 @@ app.register_blueprint(index_blueprint)
 app.register_blueprint(search_blueprint)
 app.register_blueprint(user_blueprint)
 app.register_blueprint(tag_blueprint)
-
+# register blueprints
 
 @app.route("/api/posts")
 def api_1():
