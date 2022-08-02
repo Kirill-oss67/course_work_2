@@ -1,12 +1,16 @@
-name: github actions
+name: CI actions
 on: [push]
 jobs:
-  build_and_push:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: clone code
         uses: actions/checkout@v2
-      - name: list dir
-        uses: ls -la
+      - name: build
+        run: docker-build -t ${{ secrets.DOCKER_NAME }}/hw26:$GITHUB_REF_NAME-$GITHUB_RUN_ID
+      - name: login
+        run: docker login -u ${{ secrets.DOCKER_NAME }} -p ${{ secrets.DOCKER_TOKEN }}
+      - name: push
+        run: docker push ${{ secrets.DOCKER_NAME }}/hw26:$GITHUB_REF_NAME-$GITHUB_RUN_ID
 
 
