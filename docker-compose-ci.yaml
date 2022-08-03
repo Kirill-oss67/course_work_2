@@ -1,7 +1,7 @@
 version: '3.9'
 services:
   flask_web:
-    image: yakovkirilldeveloper/hw26: $GITHUB_REF_NAME-$GITHUB_RUN_ID
+    image: yakovkirilldeveloper/hw26:$GITHUB_REF_NAME-$GITHUB_RUN_ID
     ports:
       - 80:80
     restart: always
