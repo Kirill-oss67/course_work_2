@@ -19,7 +19,7 @@ jobs:
       - name: clone code
         uses: actions/checkout@v2
       - name: render configs
-        uses: |
+        run: |
           mkdir deploy
           cat docker-compose-ci.yaml | envsubst > deploy/docker-compose.yaml
       - name: copy to server
