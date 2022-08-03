@@ -38,7 +38,7 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           script: |
-            cd flack_app_ci
+            cd flack_api_ci
             echo ${{ secrets.PASSWORD }} | sudo -S docker-compose up -d
 
 
