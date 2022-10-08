@@ -1,17 +1,17 @@
 name: CI actions
 on: [push]
 jobs:
-  build:
+  build and push:
     runs-on: ubuntu-latest
     steps:
       - name: clone code
         uses: actions/checkout@v2
-      - name: build
-        run: docker build -t ${{ secrets.DOCKER_NAME }}/hw26:$GITHUB_REF_NAME-$GITHUB_RUN_ID .
+      - name: docker build
+        run: docker build -t ${{ secrets.DOCKER_NAME }}/application_of_goals:$GITHUB_REF_NAME-$GITHUB_RUN_ID .
       - name: login
         run: docker login -u ${{ secrets.DOCKER_NAME }} -p ${{ secrets.DOCKER_TOKEN }}
       - name: push
-        run: docker push ${{ secrets.DOCKER_NAME }}/hw26:$GITHUB_REF_NAME-$GITHUB_RUN_ID
+        run: docker push ${{ secrets.DOCKER_NAME }}/application_of_goals:$GITHUB_REF_NAME-$GITHUB_RUN_ID
   deploy:
     runs-on: ubuntu-latest
     needs: build

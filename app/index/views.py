@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request
+from flask import Blueprint, render_template
 
 from utils import get_posts_all, get_post_by_pk, get_comments_by_post_id
 
